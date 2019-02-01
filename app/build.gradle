@@ -4,6 +4,7 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -33,4 +34,15 @@ dependencies {
 
     //Added for use of gif
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.+'
+
+    //pro web service call
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+
+    //retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+
+    //rxandroid
+    implementation "io.reactivex.rxjava2:rxandroid:2.0.1"
 }

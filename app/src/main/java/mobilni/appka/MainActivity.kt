@@ -2,9 +2,11 @@ package mobilni.appka
 
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import kotlinx.android.synthetic.main.activity_camera.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 
@@ -35,5 +37,11 @@ class MainActivity : AppCompatActivity() {
             val bitmap = BitmapFactory.decodeFile(file.path)
             avatarView.setImageBitmap(bitmap)
         }
+
+        // Set Border
+        avatarView.setBorderColor(Color.LTGRAY)
+        avatarView.setBorderWidth(3F)
+        // Add Shadow with default param
+        avatarView.addShadow()
     }
 }

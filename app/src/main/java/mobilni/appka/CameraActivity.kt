@@ -13,7 +13,10 @@ import java.io.File
 import java.io.FileOutputStream
 import java.util.*
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.graphics.Color
 import kotlinx.android.synthetic.main.activity_camera.*
+import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.Exception
 
 class CameraActivity : AppCompatActivity() {
@@ -86,4 +89,20 @@ class CameraActivity : AppCompatActivity() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        val root = Environment.getExternalStorageDirectory().toString()
+        val OutletFname = "Avatar.jpg"
+        val myDir = File(root+"/moje_appka_avatar")
+        val file = File(myDir, OutletFname)
+        if(file.exists()){
+            val bitmap = BitmapFactory.decodeFile(file.path)
+            imageViewCamera.setImageBitmap(bitmap)
+        }
+        // Set Border
+        imageViewCamera.setBorderColor(Color.LTGRAY)
+        imageViewCamera.setBorderWidth(10F)
+        // Add Shadow with default param
+        imageViewCamera.addShadow()
+    }
 }
